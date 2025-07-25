@@ -24,6 +24,11 @@ kotlin {
     }
 
     nativeTarget.apply {
+        compilations.getByName("main") {
+            cinterops {
+                val libraylib by creating
+            }
+        }
         binaries {
             executable {
                 entryPoint = "main"

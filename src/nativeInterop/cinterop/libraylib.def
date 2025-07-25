@@ -1,0 +1,7 @@
+headers = raylib.h raylib_colors.h
+headerFilter = raylib.h raylib_colors.h
+package = raylib
+
+libraryPaths = /usr/lib:/usr/local/lib
+compilerOpts.linux = -I/usr/include -I/usr/include/x86_64-linux-gnu -I/usr/local/include -Isrc/nativeInterop/cinterop
+linkerOpts.linux = -L/usr/lib -L/usr/local/lib -lraylib -lGL -lm -lpthread -ldl -lrt -lX11 --allow-shlib-undefined
