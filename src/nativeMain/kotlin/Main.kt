@@ -1,6 +1,7 @@
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.cinterop.*
 import raylib.*
+import raylib.Color
 
 @OptIn(ExperimentalForeignApi::class)
 fun main(args: Array<String>) {
@@ -10,25 +11,13 @@ fun main(args: Array<String>) {
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Hola")
     SetTargetFPS(60)
 
-
-    //val color = GetColor(990000)
     while (!WindowShouldClose()) {
         BeginDrawing()
         ClearBackground(COLOR_RED.readValue())
+        DrawText("Happy Coding!", SCREEN_WIDTH/2-120, SCREEN_HEIGHT/2-42, 40, COLOR_DARKGRAY.readValue())
+        DrawText("This is a Raylib window powered by\n\t\t\t\t\t\t\t\t Kotlin Native", SCREEN_WIDTH/4, SCREEN_HEIGHT/2, 36, COLOR_DARKGRAY.readValue())
         EndDrawing()
     }
     CloseWindow()
-    //SetTargetFPS(60)
-    //InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT)
-    /*InitWindow(800, 600, "Raylib Kotlin/Native Demo")
-    SetTargetFPS(60)
 
-    while (!WindowShouldClose()) {
-        BeginDrawing()
-        ClearBackground(RAYWHITE)
-        DrawText("Hola", 350, 280, 40, DARKGRAY)
-        EndDrawing()
-    }
-
-    CloseWindow()*/
 }
